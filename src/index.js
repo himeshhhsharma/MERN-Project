@@ -1,22 +1,24 @@
 // require('dotenv').config({path:'./env'})
 
-import dotenv from 'dotenv';
+import dotenv from "dotenv";
 import connectDB from "./db/index.js";
+// import {app} from './app.js';
+import { app } from "./app.js";
 
 dotenv.config({
-    path:'./.env'
-})
+  path: "./.env",
+});
 
 // this connectDB() function is async function, so it returns a promise.
 connectDB()
-.then(()=>{
-    app.listen(process.env.PORT || 8000,()=>{
-        console.log(`Server is running at Port:${process.env.PORT}`)
-    })
-})
-.catch((err)=>{
-    console.log('MONGO db connection FAILED:',err);
-})
+  .then(() => {
+    app.listen(process.env.PORT || 8000, () => {
+      console.log(`Server is running at Port:${process.env.PORT}`);
+    });
+  })
+  .catch((err) => {
+    console.log("MONGO db connection FAILED:", err);
+  });
 
 
 
@@ -30,6 +32,22 @@ connectDB()
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
 
 /*
 connecting database with writing the function on index.js

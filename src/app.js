@@ -28,4 +28,10 @@ app.use(express.static("public"));
 // for configuration of cookie parser=> to access and maniplate cookies on user's system from server
 app.use(cookieParser());
 
+//routes import
+import userRouter from "./routes/user.routes.js";
+
+// routes declaration
+app.use("/api/v1/users", userRouter);
+
 export { app };
