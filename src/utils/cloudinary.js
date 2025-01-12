@@ -17,7 +17,11 @@ const uploadOnCloudinary = async (localFilePath) => {
       resource_type: "auto",
     });
     // file has been uploaded successfully
-    console.log("File is uploaded on cloudinary", response.url);
+    // console.log("File is uploaded on cloudinary", response.url);
+
+    // upload hogyi ha to usko unlink kr dete hai hum
+    fs.unlinkSync(localFilePath);
+
     return response;
   } catch (error) {
     // file clodinary pr upload nhi hui hai, but uss ke pehle wo server pr to hai hi
